@@ -1,4 +1,7 @@
 substitutions:
+  device_hostname: SPECIFY_HOSTNAME_TO_BASELINE_YAML_INCLUDE
+  device_friendly_name: SPECIFY_FRIENDLY_NAME_TO_BASELINE_YAML_INCLUDE
+  device_comment: SPECIFY_DEVICE_COMMENT_TO_BASELINE_YAML_INCLUDE
   logger_baud_rate: "115200"
 
 esphome:
