@@ -21,7 +21,7 @@ packages:
 # "All Device" baseline stuff here
 
 <<: !include 
-  file: ../include/wemos-d1-mini-wifi-baseline.yaml
+  file: ../include/esp32-device-baseline.yaml
   vars:
     device_hostname: ${device_hostname} 
     device_friendly_name: ${device_hostname}
