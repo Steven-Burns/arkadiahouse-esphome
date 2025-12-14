@@ -1,5 +1,6 @@
-// For format details, see https://aka.ms/devcontainer.json. For config options, see the
-// README at: https://github.com/devcontainers/templates/tree/main/src/debian
+// For format details, see https://aka.ms/devcontainer.json. 
+// For config options, see the README at: https://github.com/devcontainers/templates/tree/main/src/debian
+// pre-defined variables: https://containers.dev/implementors/json_reference/#variables-in-devcontainerjson
 {
   "name": "ESPHomeInAContainer",
   //"context": "..",
@@ -33,11 +34,18 @@
 //  "appPort": 6052,
   // if you are using avahi in the host device, uncomment these to allow the
   // devcontainer to find devices via mdns
-  //"mounts": [
+  // "mounts": [
+  //   "type=volume,source=${localWorkspaceFolderBasename},target=${containerWorkspaceFolder}/"
   //  "type=bind,source=/dev/bus/usb,target=/dev/bus/usb",
   //  "type=bind,source=/var/run/dbus,target=/var/run/dbus",
   //  "type=bind,source=/var/run/avahi-daemon/socket,target=/var/run/avahi-daemon/socket"
-  //],
+  // ],
+
+  // This is a reference to a named docker volume that is assumed to already exist (created manually
+  // in docker desktop, or via a docker compose)
+  "workspaceMount": "type=volume,source=arkadiahouse-esphome-main,target=/workspace",
+  "workspaceFolder": "/workspace",
+
   "customizations": {
     "vscode": {
       "extensions": [
