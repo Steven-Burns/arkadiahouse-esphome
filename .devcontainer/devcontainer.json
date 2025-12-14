@@ -33,7 +33,7 @@
 
 //  "appPort": 6052,
   "mounts": [
-    "type=bind,source=c:\temp,target=/host/temp"
+    "type=bind,source=c:\\temp,target=/host/temp"
   // if you are using avahi in the host device, uncomment these to allow the
   // devcontainer to find devices via mdns
   //  "type=bind,source=/dev/bus/usb,target=/dev/bus/usb",
