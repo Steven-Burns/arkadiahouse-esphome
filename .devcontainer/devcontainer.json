@@ -40,13 +40,10 @@
   "customizations": {
     "vscode": {
       "extensions": [
-        "visualstudioexptteam.vscodeintellicode",
         // yaml
         "redhat.vscode-yaml",
         // cpp
-        "ms-vscode.cpptools",
-        // editorconfig
-        "editorconfig.editorconfig"
+        "ms-vscode.cpptools"
       ],
       "settings": {
         "yaml.customTags": [
