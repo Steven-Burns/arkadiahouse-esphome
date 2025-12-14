@@ -32,14 +32,14 @@
 
 
 //  "appPort": 6052,
+  "mounts": [
+    "type=bind,source=c:\temp,target=/host/temp"
   // if you are using avahi in the host device, uncomment these to allow the
   // devcontainer to find devices via mdns
-  // "mounts": [
-  //   "type=volume,source=${localWorkspaceFolderBasename},target=${containerWorkspaceFolder}/"
   //  "type=bind,source=/dev/bus/usb,target=/dev/bus/usb",
   //  "type=bind,source=/var/run/dbus,target=/var/run/dbus",
   //  "type=bind,source=/var/run/avahi-daemon/socket,target=/var/run/avahi-daemon/socket"
-  // ],
+  ],
 
   // This is a reference to a named docker volume that is assumed to already exist (created manually
   // in docker desktop, or via a docker compose)
