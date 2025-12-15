@@ -3,60 +3,61 @@
 // pre-defined variables: https://containers.dev/implementors/json_reference/#variables-in-devcontainerjson
 {
   "name": "ESPHomeInAContainer",
-  //"context": "..",
-	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-//	"image": "mcr.microsoft.com/devcontainers/base:trixie"
   "dockerFile": "Dockerfile",
-//   "postCreateCommand": [
+
+//   "postCreateCommand": 
+//   [
 //     "script/devcontainer-post-create"
 //   ],
+
 	// Features to add to the dev container. More info: https://containers.dev/features.
-   "features": {
-//     "ghcr.io/devcontainers/features/github-cli:1": {}
+   "features": 
+   {
+    // someday, it might be worth experimenting with installing powershell via the dockerfile.
     "ghcr.io/devcontainers/features/powershell:1": { }
    },
 
-   // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "root"
+  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+  // "remoteUser": "root"
 
-
-  "runArgs": [
+  "runArgs": 
+  [
     "--privileged",
     "-e",
     "GIT_EDITOR=code --wait"
     // uncomment and edit the path in order to pass though local USB serial to the container
     // , "--device=/dev/ttyACM0"
   ],
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	// "forwardPorts": [],
-
-
-//  "appPort": 6052,
-  "mounts": [
+  
+  "mounts": 
+  [
+    // this is convenient for copying files back and forth between the (Windows) host and the container
     "type=bind,source=c:\\temp,target=/host/temp"
-  // if you are using avahi in the host device, uncomment these to allow the
-  // devcontainer to find devices via mdns
-  //  "type=bind,source=/dev/bus/usb,target=/dev/bus/usb",
-  //  "type=bind,source=/var/run/dbus,target=/var/run/dbus",
-  //  "type=bind,source=/var/run/avahi-daemon/socket,target=/var/run/avahi-daemon/socket"
   ],
 
   // This is a reference to a named docker volume that is assumed to already exist (created manually
-  // in docker desktop, or via a docker compose)
+  // in docker desktop, or via a docker compose).  Clone the repo into a folder named arkadiahouse-esphome 
+  // in the named volume. 
   "workspaceMount": "type=volume,source=arkadiahouse-esphome-main,volume-subpath=arkadiahouse-esphome,target=/workspace",
   "workspaceFolder": "/workspace",
 
-  "customizations": {
-    "vscode": {
-      "extensions": [
+  "customizations": 
+  {
+    "vscode": 
+    {
+      "extensions": 
+      [
         // yaml
         "redhat.vscode-yaml",
         // cpp
         "ms-vscode.cpptools"
-        // this gets added automagically with the powershell feature, above: "ms-vscode.powershell",        
+        // this gets added automagically with the powershell feature, above: 
+        // "ms-vscode.powershell",        
       ],
-      "settings": {
-        "yaml.customTags": [
+      "settings": 
+      {
+        "yaml.customTags": 
+        [
           "!secret scalar",
           "!lambda scalar",
           "!extend scalar",
@@ -66,15 +67,18 @@
           "!include_dir_merge_list scalar",
           "!include_dir_merge_named scalar"
         ],
-        "files.exclude": {
+        "files.exclude": 
+        {
           "**/.git": true,
           "**/.DS_Store": true,
-          "**/*.pyc": {
+          "**/*.pyc": 
+          {
             "when": "$(basename).py"
           },
           "**/__pycache__": true
         },
-        "files.associations": {
+        "files.associations": 
+        {
           "**/.vscode/*.json": "jsonc"
         }
       }
