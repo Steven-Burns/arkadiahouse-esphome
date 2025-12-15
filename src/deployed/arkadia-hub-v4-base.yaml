@@ -1,3 +1,7 @@
+# The 'v4' hub board has all the external sensors hooked up with screw terminals.
+# This is still useful for testing individual components (ETH modules, displays, radars), but 
+# is not installed into actual use. 
+
 substitutions:
   device_hostname: SPECIFY_HOSTNAME_TO_BASELINE_YAML_INCLUDE
   device_comment: SPECIFY_DEVICE_COMMENT_TO_BASELINE_YAML_INCLUDE
@@ -91,7 +95,7 @@ packages:
   file: /workspace/include/esp32-device-baseline.yaml
   vars:
     # turn off UART0 logging so that we can use it for radar1
-    logger_baud_rate: "0"
+    logger_baud_rate: 0
     device_hostname: ${device_hostname} 
     device_friendly_name: "Arkadia House Sensor Hub v4 (${device_hostname})"
     device_comment: ${device_comment}

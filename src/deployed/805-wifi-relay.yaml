@@ -1,0 +1,24 @@
+esp8266:
+  board: esp01_1m
+
+packages:
+  wifi: !include
+    file: /workspace/include/wifi.yaml
+    filex: ${device_name}
+
+  relay: !include 
+    file: /workspace/include/single-relay.yaml
+    vars: 
+      relay_0_pin: "GPIO2"
+
+# # "All Device" baseline stuff here
+
+<<: !include 
+  file: /workspace/include/esp8266-device-baseline.yaml
+  vars:
+    device_hostname: "m-gym-lmp-1-0ed71c-805"
+    device_friendly_name: "Lava Lamp"
+    device_comment: "esp8266 ESP-01 with relay built into lava lamp cord."
+    area: "Gym"
+
+

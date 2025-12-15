@@ -1,3 +1,8 @@
+# The 'v6' board has a separate wiring harness daughter board that has the screw terminals
+# for the external sensors.  The v6 hub connects to the daughter with a 2x10 pin header.
+# This board proved the daughtercard concept worked, but further revision for the enclosure
+# was needed, and so this iteration is only good as a test harness.
+
 esp32:
   board: wemos_d1_mini32
   cpu_frequency: 240MHZ
@@ -91,5 +96,5 @@ packages:
     # turn off UART0 logging so that we can use it for radar1
     logger_baud_rate: "0"
     device_hostname: "621-esphome"
-    device_friendly_name: "Arkadia House Sensor Hub 06.xx (621)"
+    device_friendly_name: "Arkadia House Sensor Hub v6 (621-esphome)"
     device_comment: "Wherever you go, there you are."
