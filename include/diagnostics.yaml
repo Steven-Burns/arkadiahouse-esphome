@@ -44,32 +44,8 @@ text_sensor:
   #   lambda: return { ESPHOME_PROJECT_NAME " " ESPHOME_PROJECT_VERSION };
 
 sensor:
-  - platform: template
-    id: sys_esp_xtal_freq
-    name: "Crystal Freq MHz"
-    entity_category: "diagnostic"
-    icon: "mdi:information-box"
-    unit_of_measurement: MHz
-    state_class: measurement
-    lambda: return getXtalFrequencyMhz();
-    internal: true 
-    filters:
-      delta: 1
-  - platform: template
-    id: sys_esp_apb_bus_freq
-    name: "APB Bus Speed MHz"
-    entity_category: "diagnostic"
-    icon: "mdi:information-box"
-    unit_of_measurement: MHz
-    state_class: measurement
-    lambda: return getApbFrequency() / 1000000;
-    internal: true
-    filters:
-      delta: 1
-  - platform: template
-    id: sys_esp_temperature
-    name: CPU Temperature
-    lambda: return temperatureRead();
+  - platform: internal_temperature
+    name: "CPU Temperature"
     unit_of_measurement: °C
     device_class: temperature
     state_class: measurement
@@ -78,17 +54,6 @@ sensor:
     icon: "mdi:information-box"
     filters:
       delta: 1.0
-  - platform: template
-    id: sys_esp_cpu_freq
-    name: "CPU Speed"
-    unit_of_measurement: MHz
-    state_class: measurement
-    entity_category: "diagnostic"
-    icon: "mdi:information-box"
-    internal: true
-    filters:
-      delta: 1
-    lambda: return getCpuFrequencyMhz(); 
   - platform: uptime
     name: Uptime (approx)
     id: sys_uptime_id
@@ -97,6 +62,16 @@ sensor:
     entity_category: "diagnostic"
     icon: "mdi:information-box"
   - platform: debug
+    cpu_frequency:
+      name: "CPU Speed"
+      id: sys_esp_cpu_freq
+      unit_of_measurement: Hz
+      state_class: measurement
+      entity_category: "diagnostic"
+      icon: "mdi:information-box"
+      internal: true
+      filters:
+        delta: 1
     free:
       name: "Heap Free"
       entity_category: "diagnostic"
