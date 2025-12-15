@@ -1,5 +1,0 @@
-<<: !include 
-  file: ../include/lolin-s2-mini-wifi-baseline.yaml
-  vars:
-    device_hostname: "604-esphome"
-

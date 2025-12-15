@@ -1,5 +1,0 @@
-<<: !include 
-  file: ../include/wemos-d1-mini-wifi-baseline.yaml
-  vars:
-    device_hostname: "662-esphome"
-
