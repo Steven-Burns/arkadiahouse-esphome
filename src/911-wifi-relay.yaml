@@ -3,16 +3,16 @@ esp8266:
 
 packages:
   blinky: !include
-    file: include/interval-blinky.yaml
+    file: /workspace/include/interval-blinky.yaml
     vars:
       builtin_led_pin: "GPIO2"
   wifi: !include
-    file: include/wifi.yaml
+    file: /workspace/include/wifi.yaml
 
 # "All Device" baseline stuff here
 
 <<: !include 
-  file: include/esp8266-device-baseline.yaml
+  file: /workspace/include/esp8266-device-baseline.yaml
   vars:
     device_hostname: "911-esphome"
     device_comment: "Board 911 controlling a transistor to remote power on/off Linda's BOSE speaker."

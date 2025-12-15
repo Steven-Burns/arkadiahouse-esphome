@@ -4,11 +4,11 @@ esp32:
 
 packages:
   blinky: !include
-    file: include/interval-blinky.yaml
+    file: /workspace/include/interval-blinky.yaml
     vars:
       builtin_led_pin: "GPIO15"
   wired_ethernet: !include
-    file: include/wired-ethernet.yaml
+    file: /workspace/include/wired-ethernet.yaml
     vars:
       ethernet_clk_pin: "GPIO34"      # --- In future interations, might look at the datasheet to see 
       ethernet_mosi_pin: "GPIO36"     #     if these are optimal choices.
@@ -49,7 +49,7 @@ switch:
 # "All Device" baseline stuff here
 
 <<: !include 
-  file: include/esp32-device-baseline.yaml
+  file: /workspace/include/esp32-device-baseline.yaml
   vars:
     device_hostname: "916-esphome"
     device_comment: "Baseline for board 916."
