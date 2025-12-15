@@ -50,10 +50,10 @@ binary_sensor:
       then:
         lambda: |-
           id(keypad_key_states)[0] = x;    
-          var b = id(buzzer_0_id); 
-          b.turn_on();
-          b.set_frequency(1000.0);
-          b.set_level(0.5);
+          //var b = id(buzzer_0_id); 
+          //b.turn_on();
+          //b.set_frequency(1000.0);
+          //b.set_level(0.5);
   - platform: gpio
     name: "KSW 1"
     id: keypad_button_1
