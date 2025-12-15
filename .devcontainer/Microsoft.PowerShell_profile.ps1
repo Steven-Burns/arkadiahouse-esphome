@@ -47,7 +47,7 @@ function prompt
 	$host.ui.Write(
 		[ConsoleColor]::Yellow, 
 		$local:rawui.BackgroundColor, 
-		$("{2}{0:d} {3:yyyy-MM-dd HH:mm:ss K}  {1} {4}`n>" -f $local:counter, $local:path, $local:promptPrefix, [datetime]::Now, $local:currentBranch) ) 
+		$("{2}{0:d} {3:yyyy-MM-dd HH:mm:ss K} ({4}) {1}`n>" -f $local:counter, $local:path, $local:promptPrefix, [datetime]::Now, $local:currentBranch) ) 
 	' '
 }
 
