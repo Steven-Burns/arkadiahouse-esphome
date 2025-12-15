@@ -3,19 +3,19 @@ esp8266:
 
 packages:
   blinky: !include
-    file: include/interval-blinky.yaml
+    file: /workspace/include/interval-blinky.yaml
     vars:
       builtin_led_pin: "GPIO2"
   wifi: !include
-    file: include/wifi.yaml
+    file: /workspace/include/wifi.yaml
   i2c: !include
-    file: include/i2c.yaml
+    file: /workspace/include/i2c.yaml
     vars:
       i2c_sda_pin: "GPIO12"
       i2c_scl_pin: "GPIO14"
 
 font:
-  - file: "fonts/spleen-5x8.bdf"
+  - file: /workspace/fonts/spleen-5x8.bdf
     id: tiny_font_id
 
 external_components:
@@ -99,7 +99,7 @@ display:
 # "All Device" baseline stuff here
 
 <<: !include 
-  file: include/esp8266-device-baseline.yaml
+  file: /workspace/include/esp8266-device-baseline.yaml
   vars:
     device_hostname: "801-esphome"
     device_comment: "esp8266 with built-in display."
