@@ -1,5 +1,8 @@
 esp32:
   board: esp32dev
+  cpu_frequency: 240MHZ
+  framework:
+    type: esp-idf
 
 packages:
   blinky: !include
@@ -37,6 +40,8 @@ packages:
 #           else {
 #             ESP_LOGW("esp32_camera_set_param", "Error in name or data range");
 #           }
+
+psram:
 
 esp32_camera: 
   id: espcam_id 
@@ -110,5 +115,6 @@ esp32_camera_web_server:
   file: /workspace/include/esp32-device-baseline.yaml
   vars:
     device_hostname: "925-esp32-cam"
+    device_friendly_name: "ESP camera thingy"
     device_comment: "Board 925 camera with WiFi."
 
