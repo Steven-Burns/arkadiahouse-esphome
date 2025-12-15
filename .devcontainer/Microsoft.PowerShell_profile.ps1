@@ -51,7 +51,7 @@ function prompt
 	' '
 }
 
-Set-Alias -Name "ll" -Value "Get-ChildItem"
+function global:ll { Get-ChildItem -Force $args }
 
 #
 # coda
