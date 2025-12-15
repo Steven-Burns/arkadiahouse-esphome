@@ -4,13 +4,13 @@ esp32:
 
 packages:
   blinky: !include
-    file: .//workspace/include/interval-blinky.yaml
+    file: /workspace/include/interval-blinky.yaml
     vars:
       builtin_led_pin: "GPIO2"
   wifi: !include  
-    file: .//workspace/include/wifi.yaml
+    file: /workspace/include/wifi.yaml
   i2c: !include
-    file: .//workspace/include/i2c.yaml
+    file: /workspace/include/i2c.yaml
     vars:
       # datasheet says 21 and 22 are I2C0
       i2c_sda_pin: "GPIO21"
