@@ -44,7 +44,12 @@ select:
           variables:
             # these are evaluated on the device, before invoking the HomeAssistant API call
             entity_id: |- 
-              std::string scene = std::string("scene.") + x.c_str();
+              // this is a static because we return a pointer to the internal buffer scene.c_str(), and then the scope closes.
+              // Without the static, that would cause scene to be destroyed and the return value is a dangling reference to 
+              // freed memory.   (which then later manifests sometimes as an "Invalid protobuf message" failure in the Home 
+              // Assistant logs.)
+              static std::string scene;
+              scene = std::string("scene.") + x.c_str();
               ESP_LOGD("main", "Activating scene %s", scene.c_str());
               return scene.c_str();
 
