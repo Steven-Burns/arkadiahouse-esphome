@@ -5,10 +5,10 @@
   "name": "ESPHomeInAContainer",
   "dockerFile": "Dockerfile",
 
-//   "postCreateCommand": 
-//   [
-//     "script/devcontainer-post-create"
-//   ],
+  "postCreateCommand": 
+  [
+    "cp ${localWorkspaceFolder}/Microsoft.PowerShell_profile.ps1 /root/.config/powershell/"
+  ],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
    "features": 
