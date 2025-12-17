@@ -5,6 +5,8 @@
   "name": "ESPHomeInAContainer",
   "dockerFile": "Dockerfile",
 
+  // More info: https://aka.ms/dev-containers-non-root.
+  "remoteUser": "root", 
   "postCreateCommand": 
   [
     "./.devcontainer/postCreate.sh"
@@ -16,9 +18,6 @@
     // someday, it might be worth experimenting with installing powershell via the dockerfile.
     "ghcr.io/devcontainers/features/powershell:1": { }
    },
-
-  // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-  // "remoteUser": "root"
 
   "runArgs": 
   [
