@@ -44,16 +44,18 @@ text_sensor:
   #   lambda: return { ESPHOME_PROJECT_NAME " " ESPHOME_PROJECT_VERSION };
 
 sensor:
-  - platform: internal_temperature
-    name: "CPU Temperature"
-    unit_of_measurement: °C
-    device_class: temperature
-    state_class: measurement
-    update_interval: 60s
-    entity_category: "diagnostic"
-    icon: "mdi:information-box"
-    filters:
-      delta: 1.0
+# this platform thingy does not appear to work. Emits error messages in
+# debug spew.
+  # - platform: internal_temperature
+  #   name: "CPU Temperature"
+  #   unit_of_measurement: °C
+  #   device_class: temperature
+  #   state_class: measurement
+  #   update_interval: 60s
+  #   entity_category: "diagnostic"
+  #   icon: "mdi:information-box"
+  #   filters:
+  #     delta: 1.0
   - platform: uptime
     name: Uptime (approx)
     id: sys_uptime_id
