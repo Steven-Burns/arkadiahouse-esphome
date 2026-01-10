@@ -18,6 +18,9 @@ logger:
   level: DEBUG
   # baud_rate = 0 will disable serial logging (API access to logs should still work, tho)
   baud_rate: ${logger_baud_rate} 
+  logs:
+    # turn the volume down on sensors as some are really noisy
+    sensor: ERROR
 
 # Enable Home Assistant API
 api:

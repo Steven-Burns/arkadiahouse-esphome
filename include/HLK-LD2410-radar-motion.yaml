@@ -74,7 +74,7 @@ sensor:
       name: ${radar_id} Movement Energy
       internal: true
       filters:
-        - delta: 10
+        - delta: 30
     still_energy:
       name: ${radar_id} Stillness Energy
       internal: true
