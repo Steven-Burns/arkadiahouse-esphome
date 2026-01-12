@@ -35,6 +35,11 @@ dmx512:
   # experimentally, if UART1 is specified for this board (xiao eps32-c3), then 
   # the timings are not precise enough.  UART0 works great, though.  To use
   # UART0, the serial logger has to be turned off (see logger_baud_rate below).
+  #
+  # From https://github.com/andyboeh/esphome-dmx512/issues/40
+  # The UART ID is auto-assigned by ESPHome, if you use the logger, the logger 
+  # gets UART0 and the first additional UART will be UART1. However, if the logger 
+  # is disabled, the UART component will be UART0. 
   uart_num: 0
   force_full_frames: false
   periodic_update: true
