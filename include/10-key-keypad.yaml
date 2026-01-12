@@ -86,7 +86,7 @@ binary_sensor:
         - lambda: |-
             id(keypad_key_states)[2] = x;        
         - rtttl.play: !lambda |-
-            return "keysw:d=64,o=5,b=120:g5,g4,g5";
+            return "keysw2:d=64,o=5,b=120:c5,g4,d5";
   - platform: gpio
     name: "KSW 3"
     id: keypad_button_3
