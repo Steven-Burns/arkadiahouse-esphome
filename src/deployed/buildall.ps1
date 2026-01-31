@@ -1,1 +1,1 @@
-dir *.yaml | % { esphome compile $_ ; esphome upload $_ }
+dir ???-*.yaml | % { esphome compile $_ ; esphome upload $_ }
