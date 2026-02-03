@@ -15,6 +15,7 @@ packages:
   file: /workspace/include/esp32-device-baseline.yaml
   vars:
     device_hostname: "803-esphome"
+    device_friendlyname: "803-esphome"
     device_comment: "Wifi and relay on board 803."
 
 
