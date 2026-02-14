@@ -184,7 +184,7 @@ light:
                 red: 100%
                 green: 0%
                 blue: 0%
-                white: 5%
+                white: 100%
                 color_mode: RGB_WHITE
             - light.control:
                 id: light_1
@@ -192,7 +192,7 @@ light:
                 red: 0%
                 green: 100%
                 blue: 0%
-                white: 5%
+                white: 100%
                 color_mode: RGB_WHITE
             - light.control:
                 id: light_2
@@ -200,7 +200,7 @@ light:
                 red: 0%
                 green: 0%
                 blue: 100%
-                white: 5%
+                white: 100%
                 color_mode: RGB_WHITE
             - delay: 250ms
             - light.control:
@@ -209,7 +209,7 @@ light:
                 red: 0%
                 green: 100%
                 blue: 0%
-                white: 5%
+                white: 100%
                 color_mode: RGB_WHITE
             - light.control:
                 id: light_1
@@ -217,7 +217,7 @@ light:
                 red: 0%
                 green: 0%
                 blue: 100%
-                white: 5%
+                white: 100%
                 color_mode: RGB_WHITE
             - light.control:
                 id: light_2
@@ -225,7 +225,7 @@ light:
                 red: 100%
                 green: 0%
                 blue: 0%
-                white: 5%
+                white: 100%
                 color_mode: RGB_WHITE
             - delay: 250ms
             - light.control:
@@ -234,7 +234,7 @@ light:
                 red: 0%
                 green: 0%
                 blue: 100%
-                white: 5%
+                white: 100%
                 color_mode: RGB_WHITE
             - light.control:
                 id: light_1
@@ -242,7 +242,7 @@ light:
                 red: 100%
                 green: 0%
                 blue: 0%
-                white: 5%
+                white: 100%
                 color_mode: RGB_WHITE
             - light.control:
                 id: light_2
@@ -250,7 +250,7 @@ light:
                 red: 0%
                 green: 100%
                 blue: 0%
-                white: 5%
+                white: 100%
                 color_mode: RGB_WHITE
             - delay: 250ms
 
