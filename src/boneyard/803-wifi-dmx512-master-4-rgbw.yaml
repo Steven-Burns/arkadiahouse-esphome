@@ -100,6 +100,22 @@ output:
     channel: 16
     universe: dmx
     id: dmx_16
+  - platform: dmx512
+    channel: 17
+    universe: dmx
+    id: dmx_17
+  - platform: dmx512
+    channel: 18
+    universe: dmx
+    id: dmx_18
+  - platform: dmx512
+    channel: 19
+    universe: dmx
+    id: dmx_19
+  - platform: dmx512
+    channel: 20
+    universe: dmx
+    id: dmx_20  
   - platform: template
     id: null_output
     type: float
@@ -112,13 +128,16 @@ output:
 
 
 light:
-  - platform: rgbw
+  - platform: rgbww
     name: "Test Light 0"
     id: light_0
     red: dmx_1
     green: dmx_2
     blue: dmx_3
-    white: dmx_4
+    cold_white: dmx_4
+    warm_white: dmx_5
+    cold_white_color_temperature: 5700 K
+    warm_white_color_temperature: 2700 K    
     gamma_correct: 0
     default_transition_length: 0s
     effects:
@@ -126,13 +145,16 @@ light:
       - pulse:
       - random:
       - flicker:
-  - platform: rgbw
+  - platform: rgbww
     name: "Test Light 1"
     id: light_1
-    red: dmx_5
-    green: dmx_6
-    blue: dmx_7
-    white: dmx_8
+    red: dmx_6
+    green: dmx_7
+    blue: dmx_8
+    cold_white: dmx_9
+    warm_white: dmx_10
+    cold_white_color_temperature: 5700 K
+    warm_white_color_temperature: 2700 K    
     gamma_correct: 0
     default_transition_length: 0s
     effects:
@@ -140,13 +162,16 @@ light:
       - pulse:
       - random:
       - flicker:
-  - platform: rgbw
+  - platform: rgbww
     name: "Test Light 2"
     id: light_2
-    red: dmx_9
-    green: dmx_10
-    blue: dmx_11
-    white: dmx_12
+    red: dmx_11
+    green: dmx_12
+    blue: dmx_13
+    cold_white: dmx_14
+    warm_white: dmx_15
+    cold_white_color_temperature: 5700 K
+    warm_white_color_temperature: 2700 K    
     gamma_correct: 0
     default_transition_length: 0s
     effects:
@@ -154,13 +179,16 @@ light:
       - pulse:
       - random:
       - flicker:
-  - platform: rgbw
+  - platform: rgbww
     name: "Test Light 3"
     id: light_3
-    red: dmx_13
-    green: dmx_14
-    blue: dmx_15
-    white: dmx_16
+    red: dmx_16
+    green: dmx_17
+    blue: dmx_18
+    cold_white: dmx_19
+    warm_white: dmx_20
+    cold_white_color_temperature: 5700 K
+    warm_white_color_temperature: 2700 K    
     gamma_correct: 0
     default_transition_length: 0s
     effects:
