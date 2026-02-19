@@ -4,7 +4,7 @@ light:
     name: "RMT 10-pixel WS2812B strip 5V"
     rgb_order: GRB
     pin: GPIO22
-    num_leds: 10
+    num_leds: 144
     chipset: ws2812
     is_wrgb: false
     default_transition_length: 0s
