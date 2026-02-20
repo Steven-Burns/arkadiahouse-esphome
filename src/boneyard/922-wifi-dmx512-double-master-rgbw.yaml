@@ -1,0 +1,287 @@
+# two DMX universes on the same device, with 2 RGBCW fixtures (10 channels) on each universe.
+
+esp32:
+  board: wemos_d1_mini32
+  cpu_frequency: 240MHZ
+  framework:
+    type: esp-idf
+
+external_components:
+  - source: github://andyboeh/esphome-dmx512
+
+uart:
+  - id: uart_bus0
+    baud_rate: 250000
+    tx_pin: 
+      number: GPIO27   
+      allow_other_uses: true # For ESPHome >= 2023.12.0
+      inverted: false
+    stop_bits: 2
+    data_bits: 8
+    parity: NONE
+  # - id: uart_bus1
+  #   baud_rate: 250000
+  #   tx_pin: 
+  #     number: GPIO5   
+  #     allow_other_uses: true # For ESPHome >= 2023.12.0
+  #     inverted: false
+  #   stop_bits: 2
+  #   data_bits: 8
+  #   parity: NONE
+
+
+dmx512:
+  - id: dmx_u1   
+    uart_id: uart_bus0
+    #enable_pin: GPIO33
+    tx_pin: 
+      number: GPIO27
+      allow_other_uses: true # For ESPHome >= 2023.12.0
+    uart_num: 0
+    force_full_frames: false
+    periodic_update: true
+    custom_break_len: 92 # 92=default optional
+    custom_mab_len: 12 # 12=default optional
+    update_interval: 500 # 500=default optional
+  # - id: dmx_u2   
+  #   uart_id: uart_bus1
+  #   #enable_pin: GPIO33
+  #   tx_pin: 
+  #     number: GPIO5
+  #     allow_other_uses: true # For ESPHome >= 2023.12.0
+  #   uart_num: 1
+  #   force_full_frames: false
+  #   periodic_update: true
+  #   custom_break_len: 92 # 92=default optional
+  #   custom_mab_len: 12 # 12=default optional
+  #   update_interval: 500 # 500=default optional
+
+output:
+  - platform: dmx512
+    channel: 1
+    universe: dmx_u1
+    id: dmx_u1_ch1  
+  - platform: dmx512
+    channel: 2
+    universe: dmx_u1
+    id: dmx_u1_ch2
+  - platform: dmx512
+    channel: 3
+    universe: dmx_u1
+    id: dmx_u1_ch3  
+  - platform: dmx512
+    channel: 4
+    universe: dmx_u1
+    id: dmx_u1_ch4
+  - platform: dmx512
+    channel: 5
+    universe: dmx_u1
+    id: dmx_u1_ch5  
+  - platform: dmx512
+    channel: 6
+    universe: dmx_u1
+    id: dmx_u1_ch6
+  - platform: dmx512
+    channel: 7
+    universe: dmx_u1  
+    id: dmx_u1_ch7
+  - platform: dmx512
+    channel: 8
+    universe: dmx_u1
+    id: dmx_u1_ch8    
+  - platform: dmx512
+    channel: 9
+    universe: dmx_u1
+    id: dmx_u1_ch9
+  - platform: dmx512
+    channel: 10
+    universe: dmx_u1
+    id: dmx_u1_ch10
+
+  # - platform: dmx512
+  #   channel: 1
+  #   universe: dmx_u2
+  #   id: dmx_u2_ch1  
+  # - platform: dmx512
+  #   channel: 2
+  #   universe: dmx_u2
+  #   id: dmx_u2_ch2
+  # - platform: dmx512
+  #   channel: 3
+  #   universe: dmx_u2
+  #   id: dmx_u2_ch3  
+  # - platform: dmx512
+  #   channel: 4
+  #   universe: dmx_u2
+  #   id: dmx_u2_ch4
+  # - platform: dmx512
+  #   channel: 5
+  #   universe: dmx_u2
+  #   id: dmx_u2_ch5  
+  # - platform: dmx512
+  #   channel: 6
+  #   universe: dmx_u2
+  #   id: dmx_u2_ch6
+  # - platform: dmx512
+  #   channel: 7
+  #   universe: dmx_u2  
+  #   id: dmx_u2_ch7
+  # - platform: dmx512
+  #   channel: 8
+  #   universe: dmx_u2
+  #   id: dmx_u2_ch8    
+  # - platform: dmx512
+  #   channel: 9
+  #   universe: dmx_u2
+  #   id: dmx_u2_ch9
+  # - platform: dmx512
+  #   channel: 10
+  #   universe: dmx_u2
+  #   id: dmx_u2_ch10
+
+
+light:
+  # - platform: rgbw
+  #   name: "Test Light U1-1"
+  #   id: light_0
+  #   red: dmx_u1_ch1
+  #   green: dmx_u1_ch2
+  #   blue: dmx_u1_ch3
+  #   white: dmx_u1_ch4
+  #   gamma_correct: 0
+  #   default_transition_length: 0s
+  #   effects:
+  #     - strobe:
+  #     - pulse:
+  #     - random:
+  #     - flicker:
+  # - platform: rgbw
+  #   name: "Test Light U2-1"
+  #   id: light_2
+  #   red: dmx_u2_ch1
+  #   green: dmx_u2_ch2
+  #   blue: dmx_u2_ch3
+  #   white: dmx_u2_ch4
+  #   gamma_correct: 0
+  #   default_transition_length: 0s
+  #   effects:
+  #     - strobe:
+  #     - pulse:
+  #     - random:
+  #     - flicker:
+
+  - platform: monochromatic
+    name: "Test Light U1-Ch1"
+    output: dmx_u1_ch1
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch2"
+    output: dmx_u1_ch2
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch3"
+    output: dmx_u1_ch3  
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch4"
+    output: dmx_u1_ch4
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch5"
+    output: dmx_u1_ch5
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch6"
+    output: dmx_u1_ch6
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch7"
+    output: dmx_u1_ch7
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch8"
+    output: dmx_u1_ch8
+    default_transition_length: 0s
+    gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U1-Ch9"
+  #   output: dmx_u1_ch9
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U1-Ch10"
+  #   output: dmx_u1_ch10
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+
+  # - platform: monochromatic
+  #   name: "Test Light U2-Ch1"
+  #   output: dmx_u2_ch1
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U2-Ch2"
+  #   output: dmx_u2_ch2
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U2-Ch3"
+  #   output: dmx_u2_ch3
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U2-Ch4"
+  #   output: dmx_u2_ch4
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U2-Ch5"
+  #   output: dmx_u2_ch5
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U2-Ch6"
+  #   output: dmx_u2_ch6
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U2-Ch7"
+  #   output: dmx_u2_ch7
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U2-Ch8"
+  #   output: dmx_u2_ch8
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U2-Ch9"
+  #   output: dmx_u2_ch9
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+  # - platform: monochromatic
+  #   name: "Test Light U2-Ch10"
+  #   output: dmx_u2_ch10
+  #   default_transition_length: 0s
+  #   gamma_correct: 0
+
+
+
+# "All Device" baseline stuff here
+
+<<: !include 
+  file: /workspace/include/wemos-d1-mini-wifi-baseline.yaml
+  vars:
+    logger_baud_rate: "0"
+    device_hostname: "922-esphome"
+    device_friendly_name: "922-esphome"
+    device_comment: "Wifi DMX on board 922."
+
+
