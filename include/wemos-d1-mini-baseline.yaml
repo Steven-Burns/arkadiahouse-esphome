@@ -3,21 +3,11 @@ substitutions:
   logger_baud_rate: "115200"
 
 esp32:
-  # board: nodemcu-32s This also works:
+  # board: nodemcu-32s <-- This also works
   board: wemos_d1_mini32
   cpu_frequency: 240MHZ
   framework:
     type: esp-idf
-
-packages:
-  diagnostics: !include 
-    file: /workspace/include/diagnostics.yaml
-  blinky: !include
-    file: /workspace/include/interval-blinky.yaml
-    vars:
-      builtin_led_pin: "GPIO2"
-  wifi: !include  
-    file: /workspace/include/wifi.yaml
 
 # "All Device" baseline stuff here
 
