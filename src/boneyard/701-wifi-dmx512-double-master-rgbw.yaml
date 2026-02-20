@@ -1,10 +1,9 @@
 # two DMX universes on the same device, with 2 RGBCW fixtures (10 channels) on each universe.
-# This is a test of the double master functionality of the DMX component, which allows two
-# separate DMX universes to be output from the same device. The two universes are independent 
-# of each other, and can be used to control different fixtures or groups of fixtures. The DMX 
-# component will automatically handle the timing and synchronization of the two universes, so 
-# that they can be used together without any issues. This is a great way to expand the number 
-# of DMX channels available on a single device, without having to use multiple devices or complex wiring.
+
+# 2026-02-20 I can't get this to work -- the symptoms appear to me that the 
+# timings are not correct, but without an oscilloscope I can't be sure. 
+# perhaps fiddling with custom parameters like custom_break_len could work, but 
+# I will try another board instead.
 
 esp32:
   board: wt32-eth01
@@ -44,7 +43,7 @@ dmx512:
       number: GPIO5
       allow_other_uses: true # For ESPHome >= 2023.12.0
     uart_num: 0
-    force_full_frames: false
+    force_full_frames: true
     periodic_update: true
     custom_break_len: 92 # 92=default optional
     custom_mab_len: 12 # 12=default optional
@@ -175,6 +174,109 @@ light:
       - pulse:
       - random:
       - flicker:
+
+  - platform: monochromatic
+    name: "Test Light U1-Ch1"
+    output: dmx_u1_ch1
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch2"
+    output: dmx_u1_ch2
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch3"
+    output: dmx_u1_ch3  
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch4"
+    output: dmx_u1_ch4
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch5"
+    output: dmx_u1_ch5
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch6"
+    output: dmx_u1_ch6
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch7"
+    output: dmx_u1_ch7
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch8"
+    output: dmx_u1_ch8
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch9"
+    output: dmx_u1_ch9
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U1-Ch10"
+    output: dmx_u1_ch10
+    default_transition_length: 0s
+    gamma_correct: 0
+
+  - platform: monochromatic
+    name: "Test Light U2-Ch1"
+    output: dmx_u2_ch1
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U2-Ch2"
+    output: dmx_u2_ch2
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U2-Ch3"
+    output: dmx_u2_ch3
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U2-Ch4"
+    output: dmx_u2_ch4
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U2-Ch5"
+    output: dmx_u2_ch5
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U2-Ch6"
+    output: dmx_u2_ch6
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U2-Ch7"
+    output: dmx_u2_ch7
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U2-Ch8"
+    output: dmx_u2_ch8
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U2-Ch9"
+    output: dmx_u2_ch9
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    name: "Test Light U2-Ch10"
+    output: dmx_u2_ch10
+    default_transition_length: 0s
+    gamma_correct: 0
+
 
 
 # "All Device" baseline stuff here
