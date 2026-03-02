@@ -50,13 +50,13 @@
         "redhat.vscode-yaml",
 
         // cpp
-        "ms-vscode.cpptools"
+        "ms-vscode.cpptools",
 
         // this gets added automagically with the powershell feature, above: 
         // "ms-vscode.powershell",
         
         // mermaid in markdown
-        "bierner.markdown-mermaid
+        "bierner.markdown-mermaid",
       ],
       "settings": 
       {
