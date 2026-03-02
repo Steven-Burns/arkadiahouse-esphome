@@ -56,7 +56,7 @@
         // "ms-vscode.powershell",
         
         // mermaid in markdown
-        "bierner.markdown-mermaid",
+        "bierner.markdown-mermaid"
       ],
       "settings": 
       {
