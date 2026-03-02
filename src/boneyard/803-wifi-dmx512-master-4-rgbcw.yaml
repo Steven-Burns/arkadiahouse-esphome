@@ -212,24 +212,36 @@ light:
                 red: 100%
                 green: 0%
                 blue: 0%
-                white: 100%
-                color_mode: RGB_WHITE
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
             - light.control:
                 id: light_1
                 state: on
                 red: 0%
                 green: 100%
                 blue: 0%
-                white: 100%
-                color_mode: RGB_WHITE
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
             - light.control:
                 id: light_2
                 state: on
                 red: 0%
                 green: 0%
                 blue: 100%
-                white: 100%
-                color_mode: RGB_WHITE
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
+            - light.control:
+                id: light_3
+                state: on
+                red: 0%
+                green: 0%
+                blue: 0%
+                cold_white: 100%
+                warm_white: 100%
+                color_mode: RGB_COLD_WARM_WHITE
             - delay: 250ms
             - light.control:
                 id: light_0
@@ -237,24 +249,36 @@ light:
                 red: 0%
                 green: 100%
                 blue: 0%
-                white: 100%
-                color_mode: RGB_WHITE
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
             - light.control:
                 id: light_1
                 state: on
                 red: 0%
                 green: 0%
                 blue: 100%
-                white: 100%
-                color_mode: RGB_WHITE
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
             - light.control:
                 id: light_2
+                state: on
+                red: 0%
+                green: 0%
+                blue: 0%
+                cold_white: 100%
+                warm_white: 100%
+                color_mode: RGB_COLD_WARM_WHITE
+            - light.control:
+                id: light_3
                 state: on
                 red: 100%
                 green: 0%
                 blue: 0%
-                white: 100%
-                color_mode: RGB_WHITE
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
             - delay: 250ms
             - light.control:
                 id: light_0
@@ -262,24 +286,73 @@ light:
                 red: 0%
                 green: 0%
                 blue: 100%
-                white: 100%
-                color_mode: RGB_WHITE
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
+            - light.control:
+                id: light_1
+                state: on
+                red: 0%
+                green: 0%
+                blue: 0%
+                cold_white: 100%
+                warm_white: 100%
+                color_mode: RGB_COLD_WARM_WHITE
+            - light.control:
+                id: light_2
+                state: on
+                red: 100%
+                green: 0%
+                blue: 0%
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
+            - light.control:
+                id: light_3
+                state: on
+                red: 0%
+                green: 100%
+                blue: 0%
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
+            - delay: 250ms
+            - light.control:
+                id: light_0
+                state: on
+                red: 0%
+                green: 0%
+                blue: 0%
+                cold_white: 100%
+                warm_white: 100%
+                color_mode: RGB_COLD_WARM_WHITE
             - light.control:
                 id: light_1
                 state: on
                 red: 100%
                 green: 0%
                 blue: 0%
-                white: 100%
-                color_mode: RGB_WHITE
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
             - light.control:
                 id: light_2
                 state: on
                 red: 0%
                 green: 100%
                 blue: 0%
-                white: 100%
-                color_mode: RGB_WHITE
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
+            - light.control:
+                id: light_3
+                state: on
+                red: 0%
+                green: 0%
+                blue: 100%
+                cold_white: 0%
+                warm_white: 0%
+                color_mode: RGB_COLD_WARM_WHITE
             - delay: 250ms
 
 # "All Device" baseline stuff here
