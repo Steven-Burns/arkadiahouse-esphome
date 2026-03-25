@@ -11,6 +11,8 @@ esp32:
   cpu_frequency: 240MHZ
   framework:
     type: esp-idf
+    advanced:
+      minimum_chip_revision: "3.1"
 
 packages:
   diagnostics: !include 
