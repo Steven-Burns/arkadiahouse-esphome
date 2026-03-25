@@ -1,13 +1,18 @@
+# experimentally, it appears that we are limited to basically 
+# two strips of 144 pixels each due to RMT memory limitations, and that
+# this chip does not offer a DMA option for the RMT peripheral. 
+
 light:
   - platform: esp32_rmt_led_strip
-    id: light_1_id
-    name: "pixel strip 1"
+    id: light_0_id
+    name: "pixel strip 0"
     rgb_order: RGB
-    pin: GPIO22
-    num_leds: 144
+    pin: GPIO21
+    num_leds: 241
     chipset: ws2812
     is_wrgb: false
     default_transition_length: 0s
+    # gamma_correct: 0
     effects:
       - addressable_random_twinkle:
       - addressable_fireworks:
@@ -52,6 +57,65 @@ light:
           name: Flicker 2
           update_interval: 16ms
           intensity: 5%      
+
+  - platform: esp32_rmt_led_strip
+    id: light_1_id
+    name: "pixel strip 1"
+    rgb_order: GRB
+    pin: GPIO22
+    num_leds: 145
+    chipset: ws2812
+    is_wrgb: false
+    default_transition_length: 0s
+    # gamma_correct: 0
+    effects:
+      - addressable_random_twinkle:
+      - addressable_fireworks:
+      - addressable_fireworks:
+          name: Fireworks 2
+          update_interval: 32ms
+          spark_probability: 30%
+          use_random_color: false
+          fade_out_rate: 120      
+      - addressable_twinkle:
+      - addressable_twinkle:
+          name: Twinkle 2
+          twinkle_probability: 75%
+          progress_interval: 4ms      
+      - addressable_scan:
+      - addressable_scan:
+          name: cylon eye
+          move_interval: 10ms
+          scan_width: 8      
+      - addressable_rainbow:
+      - strobe:
+      - pulse:
+      - addressable_color_wipe:
+      - addressable_color_wipe:
+          name: Color Wipe 2
+          colors:
+            - red: 100%
+              green: 100%
+              blue: 100%
+              num_leds: 5
+              gradient: true
+            - red: 0%
+              green: 0%
+              blue: 0%
+              num_leds: 1
+          add_led_interval: 100ms
+          reverse: false      
+      - random:
+      - flicker:
+      - addressable_flicker:
+      - addressable_flicker:
+          name: Flicker 2
+          update_interval: 16ms
+          intensity: 5%      
+
+
+
+
 #       - automation:
 #           name: Custom Automation Effect
 #           sequence:
@@ -126,10 +190,6 @@ light:
 #     #         red: 0%
 #     #         green: 100%
 #     #         blue: 0%    
-
-
-
-
 
   
 
