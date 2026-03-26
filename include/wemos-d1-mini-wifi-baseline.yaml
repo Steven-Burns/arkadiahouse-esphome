@@ -18,7 +18,7 @@ packages:
   file: /workspace/include/wemos-d1-mini-baseline.yaml
   vars:
     device_hostname: ${device_hostname} 
-    device_friendly_name: ${device_hostname}
-    device_comment: "Baseline for board."
+    device_friendly_name: ${device_friendly_name}
+    device_comment: ${device_comment}
     logger_baud_rate: ${logger_baud_rate}
 

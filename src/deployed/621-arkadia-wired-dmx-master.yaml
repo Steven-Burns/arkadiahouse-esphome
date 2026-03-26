@@ -408,7 +408,7 @@ light:
     # logger baud rate to 0.  Then uart initialization would start with UART0.
     logger_baud_rate: "115200"
     device_hostname: "621-esphome"
-    device_friendly_name: "Wired DMX controller on board 621."
+    device_friendly_name: "Arkadia House Wired DMX controller (${device_hostname})"
     device_comment: "Wired DMX on board 621."
 
 
