@@ -1,0 +1,90 @@
+substitutions:
+  device_hostname: "669-esphome"
+  device_comment: "Arkadia House DMX controller on board 669."
+
+packages:
+   debug_lights: !include ./arkadia-dmx-debug-lights.yaml
+
+
+  # Here we define the specific light fixtures that are connected to this DMX controller.
+# light:
+#   - platform: rgbww
+#     name: "Test Light 0 (${device_hostname})"
+#     id: light_0
+#     red: dmx_u1_ch1
+#     green: dmx_u1_ch2
+#     blue: dmx_u1_ch3
+#     cold_white: dmx_u1_ch4
+#     warm_white: dmx_u1_ch5
+#     cold_white_color_temperature: 5700 K
+#     warm_white_color_temperature: 2700 K    
+#     gamma_correct: 0
+#     default_transition_length: 0s
+#     effects:
+#       - strobe:
+#       - pulse:
+#       - random:
+#       - flicker:
+#   - platform: rgbww
+#     name: "Test Light 1 (${device_hostname})"
+#     id: light_1
+#     red: dmx_u1_ch6
+#     green: dmx_u1_ch7
+#     blue: dmx_u1_ch8
+#     cold_white: dmx_u1_ch9
+#     warm_white: dmx_u1_ch10
+#     cold_white_color_temperature: 5700 K
+#     warm_white_color_temperature: 2700 K    
+#     gamma_correct: 0
+#     default_transition_length: 0s
+#     effects:
+#       - strobe:
+#       - pulse:
+#       - random:
+#       - flicker:
+#   - platform: rgbww
+#     name: "Test Light 2 (${device_hostname})"
+#     id: light_2
+#     red: dmx_u1_ch11
+#     green: dmx_u1_ch12
+#     blue: dmx_u1_ch13
+#     cold_white: dmx_u1_ch14
+#     warm_white: dmx_u1_ch15
+#     cold_white_color_temperature: 5700 K
+#     warm_white_color_temperature: 2700 K    
+#     gamma_correct: 0
+#     default_transition_length: 0s
+#     effects:
+#       - strobe:
+#       - pulse:
+#       - random:
+#       - flicker:
+#   - platform: rgbww
+#     name: "Test Light 3 (${device_hostname})"
+#     id: light_3
+#     red: dmx_u1_ch16
+#     green: dmx_u1_ch17
+#     blue: dmx_u1_ch18
+#     cold_white: dmx_u1_ch19
+#     warm_white: dmx_u1_ch20
+#     cold_white_color_temperature: 5700 K
+#     warm_white_color_temperature: 2700 K    
+#     gamma_correct: 0
+#     default_transition_length: 0s
+#     effects:
+#       - strobe:
+#       - pulse:
+#       - random:
+#       - flicker:
+
+
+<<: !include 
+  file: ./arkadia-wired-dmx-base.yaml
+  vars:
+    device_hostname: ${device_hostname}
+    device_comment: ${device_comment}
+
+
+
+
+

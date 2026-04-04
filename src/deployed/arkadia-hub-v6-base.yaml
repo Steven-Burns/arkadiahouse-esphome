@@ -1,7 +1,5 @@
 # base configuration for all v6.x Arkadia Sensor Hub hardware.
 
-
-
 substitutions:
   device_hostname: SPECIFY_HOSTNAME_TO_BASELINE_YAML_INCLUDE
   device_comment: SPECIFY_DEVICE_COMMENT_TO_BASELINE_YAML_INCLUDE

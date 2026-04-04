@@ -1,0 +1,231 @@
+# base configuration for all v1.x Arkadia wired DMX controller hardware.
+# two DMX universes on the same device, with 2 RGBCW fixtures (10 channels) on each universe.
+
+substitutions:
+  device_hostname: SPECIFY_HOSTNAME_TO_BASELINE_YAML_INCLUDE
+  device_comment: SPECIFY_DEVICE_COMMENT_TO_BASELINE_YAML_INCLUDE
+
+
+external_components:
+  - source: github://andyboeh/esphome-dmx512
+
+uart:
+
+# Leaving use of UART0 commented out here in case I ever need to remember how to utilize all 3 UARTs on a single controller.
+
+  # - id: uart_bus0
+  #   baud_rate: 250000
+  #   tx_pin: 
+  #     number: GPIO27   
+  #     allow_other_uses: true 
+  #     inverted: false
+  #   stop_bits: 2
+  #   data_bits: 8
+  #   parity: NONE
+
+  - id: uart_bus1
+    baud_rate: 250000
+    tx_pin: 
+      number: GPIO25   
+      allow_other_uses: true 
+      inverted: false
+    stop_bits: 2
+    data_bits: 8
+    parity: NONE
+  - id: uart_bus2
+    baud_rate: 250000
+    tx_pin: 
+      number: GPIO17   
+      allow_other_uses: true 
+      inverted: false
+    stop_bits: 2
+    data_bits: 8
+    parity: NONE
+
+
+dmx512:
+  # - id: dmx_u0   
+  #   uart_id: uart_bus0
+  #   tx_pin: 
+  #     number: GPIO27
+  #     allow_other_uses: true # For ESPHome >= 2023.12.0
+  #   uart_num: 0
+  #   force_full_frames: false
+  #   periodic_update: true
+  #   custom_break_len: 92 # 92=default optional
+  #   custom_mab_len: 12 # 12=default optional
+  #   update_interval: 500 # 500=default optional
+
+  - id: dmx_u1  
+    uart_id: uart_bus1
+    tx_pin: 
+      number: GPIO25
+      allow_other_uses: true 
+    uart_num: 1
+    force_full_frames: false
+    periodic_update: true
+    custom_break_len: 92 # 92=default optional
+    custom_mab_len: 12 # 12=default optional
+    update_interval: 500 # 500=default optional
+  - id: dmx_u2
+    uart_id: uart_bus2
+    tx_pin: 
+      number: GPIO17
+      allow_other_uses: true 
+    uart_num: 2
+    force_full_frames: false
+    periodic_update: true
+
+output:
+  # universe 0 commented out for future reference...
+  # - platform: dmx512
+  #   channel: 1
+  #   universe: dmx_u0
+  #   id: dmx_u0_ch1  
+  # - platform: dmx512
+  #   channel: 2
+  #   universe: dmx_u0
+  #   id: dmx_u0_ch2
+  # - platform: dmx512
+  #   channel: 3
+  #   universe: dmx_u0
+  #   id: dmx_u0_ch3  
+  # - platform: dmx512
+  #   channel: 4
+  #   universe: dmx_u0
+  #   id: dmx_u0_ch4
+  # - platform: dmx512
+  #   channel: 5
+  #   universe: dmx_u0
+  #   id: dmx_u0_ch5  
+  # - platform: dmx512
+  #   channel: 6
+  #   universe: dmx_u0
+  #   id: dmx_u0_ch6
+  # - platform: dmx512
+  #   channel: 7
+  #   universe: dmx_u0
+  #   id: dmx_u0_ch7  
+  # - platform: dmx512
+  #   channel: 8
+  #   universe: dmx_u0
+  #   id: dmx_u0_ch8
+
+# On universe 1, we define enough output channels for 4 RGB+CW+WW fixtures (5 channels each)
+  - platform: dmx512
+    channel: 1
+    universe: dmx_u1
+    id: dmx_u1_ch1  
+  - platform: dmx512
+    channel: 2
+    universe: dmx_u1
+    id: dmx_u1_ch2
+  - platform: dmx512
+    channel: 3
+    universe: dmx_u1
+    id: dmx_u1_ch3  
+  - platform: dmx512
+    channel: 4
+    universe: dmx_u1
+    id: dmx_u1_ch4
+  - platform: dmx512
+    channel: 5
+    universe: dmx_u1
+    id: dmx_u1_ch5  
+  - platform: dmx512
+    channel: 6
+    universe: dmx_u1
+    id: dmx_u1_ch6
+  - platform: dmx512
+    channel: 7
+    universe: dmx_u1
+    id: dmx_u1_ch7  
+  - platform: dmx512
+    channel: 8
+    universe: dmx_u1
+    id: dmx_u1_ch8
+  - platform: dmx512
+    channel: 9
+    universe: dmx_u1
+    id: dmx_u1_ch9  
+  - platform: dmx512
+    channel: 10
+    universe: dmx_u1
+    id: dmx_u1_ch10
+  - platform: dmx512
+    channel: 11
+    universe: dmx_u1
+    id: dmx_u1_ch11  
+  - platform: dmx512
+    channel: 12
+    universe: dmx_u1
+    id: dmx_u1_ch12
+  - platform: dmx512
+    channel: 13 
+    universe: dmx_u1
+    id: dmx_u1_ch13  
+  - platform: dmx512
+    channel: 14
+    universe: dmx_u1
+    id: dmx_u1_ch14
+  - platform: dmx512
+    channel: 15
+    universe: dmx_u1
+    id: dmx_u1_ch15  
+  - platform: dmx512
+    channel: 16
+    universe: dmx_u1
+    id: dmx_u1_ch16
+  - platform: dmx512
+    channel: 17 
+    universe: dmx_u1
+    id: dmx_u1_ch17  
+  - platform: dmx512
+    channel: 18
+    universe: dmx_u1
+    id: dmx_u1_ch18
+  - platform: dmx512
+    channel: 19
+    universe: dmx_u1
+    id: dmx_u1_ch19  
+  - platform: dmx512
+    channel: 20
+    universe: dmx_u1
+    id: dmx_u1_ch20
+
+# On universe 2, we need 4 channels starting at channel 5, as the dmx decoder on that
+# fixture is hardcoded to channels 5..8
+
+  - platform: dmx512
+    channel: 5
+    universe: dmx_u2
+    id: dmx_u2_ch5  
+  - platform: dmx512
+    channel: 6
+    universe: dmx_u2
+    id: dmx_u2_ch6
+  - platform: dmx512
+    channel: 7
+    universe: dmx_u2
+    id: dmx_u2_ch7  
+  - platform: dmx512
+    channel: 8 
+    universe: dmx_u2
+    id: dmx_u2_ch8
+
+# "All Device" baseline stuff here
+
+<<: !include 
+  file: /workspace/include/wemos-d1-mini-wired-baseline.yaml
+  vars:
+    # we explicitly set the logger baud rate to 115200 so that UART0 is allocated, and our uart components start with 
+    # UART1. If we ever wanted to have 3 UARTS on a single controller, we could use the logger for that by setting the
+    # logger baud rate to 0.  Then uart initialization would start with UART0.
+    logger_baud_rate: "115200"
+    device_hostname: ${device_hostname}
+    device_friendly_name: "Arkadia House Wired DMX controller (${device_hostname})"
+    device_comment: ${device_comment}
+
+
+
+

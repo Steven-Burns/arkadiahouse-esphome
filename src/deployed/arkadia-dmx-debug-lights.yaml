@@ -1,0 +1,152 @@
+light:
+  # Here we define simple on/off 'lights' for each individual DMX channel, which can be useful for testing and debugging.
+  - platform: monochromatic
+    id: light_u1_c1
+    name: "U1_Ch1"
+    internal: true
+    output: dmx_u1_ch1
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c2
+    name: "U1_Ch2"
+    output: dmx_u1_ch2
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c3
+    name: "U1_Ch3"
+    output: dmx_u1_ch3  
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c4
+    name: "U1_Ch4"
+    output: dmx_u1_ch4
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c5
+    name: "U1_Ch5"
+    output: dmx_u1_ch5
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c6
+    name: "U1_Ch6"
+    output: dmx_u1_ch6
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c7
+    name: "U1_Ch7"
+    output: dmx_u1_ch7
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c8
+    name: "U1_Ch8"
+    output: dmx_u1_ch8
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c9
+    name: "U1_Ch9"
+    output: dmx_u1_ch9
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c10
+    name: "U1_Ch10"
+    output: dmx_u1_ch10
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c11
+    name: "U1_Ch11"
+    output: dmx_u1_ch11
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c12
+    name: "U1_Ch12"
+    output: dmx_u1_ch12
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c13
+    name: "U1_Ch13"
+    output: dmx_u1_ch13
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c14
+    name: "U1_Ch14"
+    output: dmx_u1_ch14
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c15
+    name: "U1_Ch15"
+    output: dmx_u1_ch15
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c16
+    name: "U1_Ch16"
+    output: dmx_u1_ch16
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c17
+    name: "U1_Ch17"
+    output: dmx_u1_ch17
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c18
+    name: "U1_Ch18"
+    output: dmx_u1_ch18
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c19
+    name: "U1_Ch19"
+    output: dmx_u1_ch19
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u1_c20
+    name: "U1_Ch20"
+    output: dmx_u1_ch20
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u2_c5
+    name: "U2_Ch5"
+    output: dmx_u2_ch5
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u2_c6
+    name: "U2_Ch6"
+    output: dmx_u2_ch6
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u2_c7
+    name: "U2_Ch7"
+    output: dmx_u2_ch7
+    default_transition_length: 0s
+    gamma_correct: 0
+  - platform: monochromatic
+    id: light_u2_c8
+    name: "U2_Ch8"
+    output: dmx_u2_ch8
+    default_transition_length: 0s
+    gamma_correct: 0
+
+
+
+
+
