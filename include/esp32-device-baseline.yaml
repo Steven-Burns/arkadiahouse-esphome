@@ -22,6 +22,11 @@ logger:
     # turn the volume down on sensors as some are really noisy
     sensor: ERROR
 
+network:
+  #enable_ipv6: true
+  #min_ipv6_addr_count: 2
+  #enable_high_performance: true
+
 # Enable Home Assistant API
 api:
   # password is deprecated in favor of encryption key
@@ -46,7 +51,6 @@ web_server:
   version: 3
   include_internal: true
   log: true
-  ota: false 
   local: true
 
 # this component syncs the local gadget to the time of the Home Asst server
