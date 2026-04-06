@@ -21,6 +21,7 @@ logger:
   logs:
     # turn the volume down on sensors as some are really noisy
     sensor: ERROR
+    dmx512: ERROR
 
 network:
   #enable_ipv6: true
