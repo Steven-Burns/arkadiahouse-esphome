@@ -1,14 +1,14 @@
-# experimentally, it appears that we are limited to basically 
-# two strips of 144 pixels each due to RMT memory limitations, and that
-# this chip does not offer a DMA option for the RMT peripheral. 
+# experimentally, it appears that:
+# - we are limited to basically two strips to RMT limitations, and 
+# - this chip does not offer a DMA option for the RMT peripheral. 
+# - IT IS IMPERATIVE that the ground line of the 5V power to the MCU be tied to the 
+# ground of the 12V power to the strips. Otherwise, the data signals will not be 
+# correctly received by the strips, and the colors will be all wrong. 
+
 
 light:
-  - platform: esp32_rmt_led_strip
-    id: light_0_id
-    name: "pixel strip 0"
-    rgb_order: RGB
-    pin: GPIO27
-    num_leds: 721
+  - &light_strip_defaults
+    platform: esp32_rmt_led_strip
     chipset: ws2812
     is_wrgb: false
     default_transition_length: 0s
@@ -31,7 +31,7 @@ light:
       - addressable_scan:
           name: cylon eye
           move_interval: 1ms
-          scan_width: 8      
+          scan_width: 20      
       - addressable_rainbow:
       - strobe:
       - pulse:
@@ -56,146 +56,19 @@ light:
       - addressable_flicker:
           name: Flicker 2
           update_interval: 16ms
-          intensity: 5%      
+          intensity: 25%      
+    id: light_0_id
+    name: "pixel strip 0"
+    rgb_order: RGB
+    pin: GPIO27
+    num_leds: 1290
 
-  - platform: esp32_rmt_led_strip
+  - <<: *light_strip_defaults
     id: light_1_id
     name: "pixel strip 1"
-    rgb_order: GRB
+    rgb_order: RGB
     pin: GPIO25
-    num_leds: 145
-    chipset: ws2812
-    is_wrgb: false
-    default_transition_length: 0s
-    # gamma_correct: 0
-    effects:
-      - addressable_random_twinkle:
-      - addressable_fireworks:
-      - addressable_fireworks:
-          name: Fireworks 2
-          update_interval: 32ms
-          spark_probability: 30%
-          use_random_color: false
-          fade_out_rate: 120      
-      - addressable_twinkle:
-      - addressable_twinkle:
-          name: Twinkle 2
-          twinkle_probability: 75%
-          progress_interval: 4ms      
-      - addressable_scan:
-      - addressable_scan:
-          name: cylon eye
-          move_interval: 10ms
-          scan_width: 8      
-      - addressable_rainbow:
-      - strobe:
-      - pulse:
-      - addressable_color_wipe:
-      - addressable_color_wipe:
-          name: Color Wipe 2
-          colors:
-            - red: 100%
-              green: 100%
-              blue: 100%
-              num_leds: 5
-              gradient: true
-            - red: 0%
-              green: 0%
-              blue: 0%
-              num_leds: 1
-          add_led_interval: 100ms
-          reverse: false      
-      - random:
-      - flicker:
-      - addressable_flicker:
-      - addressable_flicker:
-          name: Flicker 2
-          update_interval: 16ms
-          intensity: 5%      
-
-
-
-
-#       - automation:
-#           name: Custom Automation Effect
-#           sequence:
-#             - light.addressable_set:
-#                 id: my_light
-#                 red: 10%
-#                 green: 10%
-#                 blue: 10%
-#             - delay: 400ms
-#             - light.addressable_set:
-#                 id: my_light
-#                 range_from: 0
-#                 range_to: 0
-#                 red: 33%
-#                 green: 0%
-#                 blue: 0%
-#             - delay: 250ms
-#             - light.addressable_set:
-#                 id: my_light
-#                 range_from: 1
-#                 range_to: 1
-#                 red: 0%
-#                 green: 0%
-#                 blue: 33%
-#             - delay: 250ms
-# #       - addressable_lambda:
-# #           name: "My Custom Lambda 1"
-# #           update_interval: 16ms
-# #           lambda: |-
-# #             // it.size() - Number of LEDs
-# #             // it[num] - Access the LED at index num.
-# #             // Set the LED at num to the given r, g, b values
-# #             // it[num] = Color(r, g, b);
-# #             // Get the color at index num (Color instance)
-# #             // it[num].get();
-
-# #             // Example: Simple color wipe
-# #             for (int i = it.size() - 1; i > 0; i--) {
-# #               it[i] = it[i - 1].get();
-# #             }
-# #             it[0] = Color::random_color();
-
-# #             // Bonus: use .range() and .all() to set many LEDs without having to write a loop.
-# #             it.range(0, 50) = Color::BLACK;
-# #             it.all().fade_to_black(10);          
-# #       - addressable_lambda:
-# #           name: "My Custom Lamba 2"
-# #           update_interval: 100ms
-# #           lambda: |-
-# #             // Static variables keep their value even when
-# #             // stopping and starting the effect again
-# #             static uint16_t progress = 0;
-
-# #             // normal variables lose their value after each
-# #             // execution - basically after each update_interval
-# #             uint16_t changes = 0;
-
-# #             // To reset static when stopping and starting the effect
-# #             // again you can use the initial_run variables
-# #             if (initial_run) {
-# #               progress = 0;
-# #               it.all() = Color::BLACK;
-# #               // optionally do a return so nothing happens until the next update_interval
-# #               return;
-# #             }                    
-
-#     # on_turn_on:
-#     #   then:
-#     #     - light.turn_on:
-#     #         id: my_light
-#     #         brightness: 20%
-#     #         red: 0%
-#     #         green: 100%
-#     #         blue: 0%    
-
-  
-
-
-
-
+    num_leds: 1290
 
 # "All Device" baseline stuff here
 
